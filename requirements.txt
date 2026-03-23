@@ -1,0 +1,5 @@
+amplify
+scipy
+numpy
+pybind11
+PyYAML

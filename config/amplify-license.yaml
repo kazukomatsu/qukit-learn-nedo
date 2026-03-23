@@ -1,0 +1,10 @@
+license:
+        Fixstars: token_for_Fixstars
+        DWaveSampler: token_for_DWaveSampler
+        LeapHybridSampler: token_for_LeapHybridSampler
+        LeapHybridCQMSampler: token_for_LeapHybridCQMSampler
+        ToshibaSQBM2: token_for_ToshibaSQBM2
+        FujitsuDA4: token_for_FujitsuDA4
+        FujitsuDA3c: token_for_FujitsuDA3c
+        NECVA2: token_for_NECVA2
+        Hitachi: token_for_Hitachi

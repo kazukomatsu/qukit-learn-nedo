@@ -1,0 +1,948 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>qklearn &mdash; qukit-learn 0.1.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
+
+  
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=01f34227"></script>
+      <script src="_static/doctools.js?v=9a2dae69"></script>
+      <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Getting Started" href="gettingStarted.html" />
+    <link rel="prev" title="Package Reference" href="modules.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            qukit-learn
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installing qukit-learn</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">Package Reference</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">qklearn</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#qklearn-cluster-module">qklearn.cluster module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#qklearn.cluster.BinaryClustering"><code class="docutils literal notranslate"><span class="pre">BinaryClustering</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#qklearn.cluster.CombinatorialClustering"><code class="docutils literal notranslate"><span class="pre">CombinatorialClustering</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#qklearn.cluster.ConsensusClustering"><code class="docutils literal notranslate"><span class="pre">ConsensusClustering</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#qklearn.cluster.ConstrainedClustering"><code class="docutils literal notranslate"><span class="pre">ConstrainedClustering</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#qklearn.cluster.KernelClustering"><code class="docutils literal notranslate"><span class="pre">KernelClustering</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#qklearn.cluster.BiDViT"><code class="docutils literal notranslate"><span class="pre">BiDViT</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#qklearn-linear-model-module">qklearn.linear_model module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#qklearn.linear_model.LinearRegression"><code class="docutils literal notranslate"><span class="pre">LinearRegression</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#qklearn-svm-module">qklearn.svm module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#qklearn.svm.SVC"><code class="docutils literal notranslate"><span class="pre">SVC</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#qklearn-utils-read-token-module">qklearn.utils.read_token module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#qklearn.utils.read_token.read_token"><code class="docutils literal notranslate"><span class="pre">read_token()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#qklearn-utils-cost-module">qklearn.utils.cost module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#qklearn.utils.cost.cost"><code class="docutils literal notranslate"><span class="pre">cost()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="gettingStarted.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="glossary.html">Glossary</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">qukit-learn</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="modules.html">Package Reference</a></li>
+      <li class="breadcrumb-item active">qklearn</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/qklearn.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="qklearn">
+<h1>qklearn<a class="headerlink" href="#qklearn" title="Link to this heading"></a></h1>
+<section id="qklearn-cluster-module">
+<span id="qklearn-cluster"></span><h2>qklearn.cluster module<a class="headerlink" href="#qklearn-cluster-module" title="Link to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="qklearn.cluster.BinaryClustering">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">qklearn.cluster.</span></span><span class="sig-name descname"><span class="pre">BinaryClustering</span></span><a class="headerlink" href="#qklearn.cluster.BinaryClustering" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">BaseSolver</span></code></p>
+<p>Classify samples into two clusters.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="qklearn.cluster.BinaryClustering.fit">
+<span class="sig-name descname"><span class="pre">fit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">X</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">float</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">ndarray</span><span class="p"><span class="pre">[</span></span><span class="pre">Any</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">dtype</span><span class="p"><span class="pre">[</span></span><span class="pre">int64</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">float64</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#qklearn.cluster.BinaryClustering.fit" title="Link to this definition"></a></dt>
+<dd><p>Generate QUBO for clustering from input data.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>X</strong> (<em>array-like</em><em> of </em><em>shape</em><em> (</em><em>n_samples</em><em>, </em><em>n_features</em><em>)</em>) – An array of samples.</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>ValueError</strong> – If variable ‘X’ had invalid shape.</p></li>
+<li><p><strong>TypeError</strong> – If an invalid data type was specified for an argument.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="qklearn.cluster.BinaryClustering.fit_predict">
+<span class="sig-name descname"><span class="pre">fit_predict</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">X</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">float</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">ndarray</span><span class="p"><span class="pre">[</span></span><span class="pre">Any</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">dtype</span><span class="p"><span class="pre">[</span></span><span class="pre">int64</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">float64</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">client</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">FixstarsClient</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#qklearn.cluster.BinaryClustering.fit_predict" title="Link to this definition"></a></dt>
+<dd><p>Generate QUBO for clustering from input data and perform clustering.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>X</strong> (<em>array-like</em><em> of </em><em>shape</em><em> (</em><em>n_samples</em><em>, </em><em>n_features</em><em>)</em>) – An array of samples.</p></li>
+<li><p><strong>client</strong> (<em>AmplifyClient</em>) – A client object of Fixstars Amplify SDK.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>labels</strong> – Indices of the cluster each sample belongs to.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>list of int</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>RuntimeError</strong> – If exceptions were raised from the Fixstars Amplify SDK.</p></li>
+<li><p><strong>ValueError</strong> – If variable ‘X’ had invalid shape.</p></li>
+<li><p><strong>TypeError</strong> – If an invalid data type was specified for an argument.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="qklearn.cluster.BinaryClustering.predict">
+<span class="sig-name descname"><span class="pre">predict</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">client</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">FixstarsClient</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#qklearn.cluster.BinaryClustering.predict" title="Link to this definition"></a></dt>
+<dd><p>Perform clustering.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>client</strong> (<em>AmplifyClient</em>) – A client object of Fixstars Amplify SDK.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>labels</strong> – Indices of the cluster each sample belongs to.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>list of int</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>RuntimeError</strong> – If exceptions were raised from the Fixstars Amplify SDK.</p></li>
+<li><p><strong>AttributeError</strong> – If this instance is not fitted yet.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="qklearn.cluster.CombinatorialClustering">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">qklearn.cluster.</span></span><span class="sig-name descname"><span class="pre">CombinatorialClustering</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_clusters</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lam</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#qklearn.cluster.CombinatorialClustering" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">BaseSolver</span></code></p>
+<p>Classify samples into the specified number of clusters.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>n_clusters</strong> (<em>int</em>) – Number of clusters. Must be greater than or equal to 1.</p></li>
+<li><p><strong>lam</strong> (<em>float</em><em>, </em><em>default=None</em>) – The Lagrange multiplier weight for the one-hot constraint used to uniquely identify each cluster.
+If None, ‘n_samples - n_clusters’ is used as lam.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>ValueError</strong> – If variable ‘n_clusters’ was less than 1.</p></li>
+<li><p><strong>TypeError</strong> – If an invalid data type was specified for an argument.</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="qklearn.cluster.CombinatorialClustering.fit">
+<span class="sig-name descname"><span class="pre">fit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">X</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">float</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">ndarray</span><span class="p"><span class="pre">[</span></span><span class="pre">Any</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">dtype</span><span class="p"><span class="pre">[</span></span><span class="pre">int64</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">float64</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">if_dist</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#qklearn.cluster.CombinatorialClustering.fit" title="Link to this definition"></a></dt>
+<dd><p>Generate QUBO for clustering from input data.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>X</strong> (<em>array-like</em><em> of </em><em>shape</em><em> (</em><em>n_samples</em><em>, </em><em>n_features</em><em>) or </em><em>array-like</em><em> of </em><em>shape</em><em>(</em><em>n_samples</em><em>, </em><em>n_samples</em><em>)</em>) – An array of samples, or a distance matrix between samples.</p></li>
+<li><p><strong>if_dist</strong> (<em>bool</em><em>, </em><em>default=False</em>) – A bool indicating whether X is a distance matrix or not.
+If True, ‘X’ is assumed to be a distance matrix; otherwise, ‘X’ is treated as an array of samples.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>ValueError</strong> – If variable ‘X’ had invalid shape.</p></li>
+<li><p><strong>TypeError</strong> – If an invalid data type was specified for an argument.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="qklearn.cluster.CombinatorialClustering.fit_predict">
+<span class="sig-name descname"><span class="pre">fit_predict</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">X</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">float</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">ndarray</span><span class="p"><span class="pre">[</span></span><span class="pre">Any</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">dtype</span><span class="p"><span class="pre">[</span></span><span class="pre">int64</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">float64</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">client</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">FixstarsClient</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">if_dist</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#qklearn.cluster.CombinatorialClustering.fit_predict" title="Link to this definition"></a></dt>
+<dd><p>Generate QUBO for clustering from input data and perform clustering.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>X</strong> (<em>array-like</em><em> of </em><em>shape</em><em> (</em><em>n_samples</em><em>, </em><em>n_features</em><em>) or </em><em>array-like</em><em> of </em><em>shape</em><em>(</em><em>n_samples</em><em>, </em><em>n_samples</em><em>)</em>) – An array of samples, or a distance matrix between samples.</p></li>
+<li><p><strong>client</strong> (<em>AmplifyClient</em>) – A client object of Fixstars Amplify SDK.</p></li>
+<li><p><strong>if_dist</strong> (<em>bool</em><em>, </em><em>default=False</em>) – A bool indicating whether X is a distance matrix or not.
+If True, ‘X’ is assumed to be a distance matrix; otherwise, ‘X’ is treated as an array of samples.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>labels</strong> – Indices of the cluster each sample belongs to.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>list of int</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>RuntimeError</strong> – If exceptions were raised from the Fixstars Amplify SDK.</p></li>
+<li><p><strong>RuntimeError</strong> – If the solution returned by an optimization solver does not satisfy the constraints.</p></li>
+<li><p><strong>ValueError</strong> – If variable ‘X’ had invalid shape.</p></li>
+<li><p><strong>TypeError</strong> – If an invalid data type was specified for an argument.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="qklearn.cluster.CombinatorialClustering.predict">
+<span class="sig-name descname"><span class="pre">predict</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">client</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">FixstarsClient</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#qklearn.cluster.CombinatorialClustering.predict" title="Link to this definition"></a></dt>
+<dd><p>Perform clustering.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>client</strong> (<em>AmplifyClient</em>) – A client object of Fixstars Amplify SDK.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>labels</strong> – Indices of the cluster each sample belongs to.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>list of int</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>RuntimeError</strong> – If exceptions were raised from Fixstars Amplify SDK.</p></li>
+<li><p><strong>RuntimeError</strong> – If the solution returned by an optimization solver does not satisfy the constraints.</p></li>
+<li><p><strong>AttributeError</strong> – If this instance is not fitted yet.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="qklearn.cluster.ConsensusClustering">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">qklearn.cluster.</span></span><span class="sig-name descname"><span class="pre">ConsensusClustering</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_clusters</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lam</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">model</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Literal</span><span class="p"><span class="pre">[</span></span><span class="s"><span class="pre">'pairwise_similarity-based'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="s"><span class="pre">'partition_difference'</span></span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'pairwise_similarity-based'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#qklearn.cluster.ConsensusClustering" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">BaseSolver</span></code></p>
+<p>Perform clustering by aggregating results from multiple clustering executions.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>n_clusters</strong> (<em>int</em>) – Number of clusters. Must be greater than or equal to 1.</p></li>
+<li><p><strong>lam</strong> (<em>float</em><em>, </em><em>default=None</em>) – The Lagrange multiplier weight for the one-hot constraint used to uniquely identify each cluster.
+If None, ‘n_samples - n_clusters’ is used as lam.</p></li>
+<li><p><strong>model</strong> (<em>{&quot;pairwise_similarity-based&quot;</em><em>, </em><em>&quot;partition_difference&quot;}</em><em>, </em><em>default=&quot;pairwise_similarity-based&quot;</em>) – An aggregating model.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>ValueError</strong> – If variable ‘n_clusters’ was less than 1.</p></li>
+<li><p><strong>ValueError</strong> – If an invalid model was specified.</p></li>
+<li><p><strong>TypeError</strong> – If an invalid data type was specified for an argument.</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="qklearn.cluster.ConsensusClustering.fit_predict">
+<span class="sig-name descname"><span class="pre">fit_predict</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">X</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">float</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">ndarray</span><span class="p"><span class="pre">[</span></span><span class="pre">Any</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">dtype</span><span class="p"><span class="pre">[</span></span><span class="pre">int64</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">float64</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">client</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">FixstarsClient</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#qklearn.cluster.ConsensusClustering.fit_predict" title="Link to this definition"></a></dt>
+<dd><p>Generate QUBO for clustering from input data and perform clustering.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>X</strong> (<em>array-like</em><em> of </em><em>shape</em><em> (</em><em>n_result</em><em>, </em><em>n_sample</em><em>)</em>) – An array of clustering results.</p></li>
+<li><p><strong>client</strong> (<em>AmplifyClient</em>) – A client object of Fixstars Amplify SDK.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>labels</strong> – Indices of the cluster each sample belongs to.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>list of int</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>RuntimeError</strong> – If exceptions were raised from the Fixstars Amplify SDK.</p></li>
+<li><p><strong>RuntimeError</strong> – If the solution returned by an optimization solver does not satisfy the constraints.</p></li>
+<li><p><strong>ValueError</strong> – If variable ‘X’ had invalid shape.</p></li>
+<li><p><strong>TypeError</strong> – If an invalid data type was specified for an argument.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="qklearn.cluster.ConstrainedClustering">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">qklearn.cluster.</span></span><span class="sig-name descname"><span class="pre">ConstrainedClustering</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_clusters</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lam</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#qklearn.cluster.ConstrainedClustering" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">BaseSolver</span></code></p>
+<p>Classify the input data into the specified number of clusters under constraints.
+If a solution that satisfies the constraints cannot be found, the cluster to which the sample belongs may become -1.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>n_clusters</strong> (<em>int</em>) – Number of clusters. Must be greater than or equal to 1.</p></li>
+<li><p><strong>lam</strong> (<em>float</em><em>, </em><em>default=None</em>) – The Lagrange multiplier weight for the one-hot constraint used to uniquely identify each cluster.
+If None, ‘n_samples - n_clusters’ is used as lam.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>ValueError</strong> – If variable ‘n_clusters’ was less than 1.</p></li>
+<li><p><strong>TypeError</strong> – If an invalid data type was specified for an argument.</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="qklearn.cluster.ConstrainedClustering.add_balanced_sizes_to_qubo">
+<span class="sig-name descname"><span class="pre">add_balanced_sizes_to_qubo</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">weight_balanced_size</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#qklearn.cluster.ConstrainedClustering.add_balanced_sizes_to_qubo" title="Link to this definition"></a></dt>
+<dd><p>Add a constraint to equalize the number of assigned samples per cluster.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>weight_balanced_size</strong> (<em>float</em><em>, </em><em>default=None</em>) – A weight of constraint. If None, ‘lam’ will be used as weight.</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>TypeError</strong> – If an invalid data type was specified for an argument.</p></li>
+<li><p><strong>ValueError</strong> – If this method was used in combination with set_*_by_qbits_reduction().</p></li>
+<li><p><strong>ValueError</strong> – If this method was used in combination with add_limited_sizes_to_qubo().</p></li>
+<li><p><strong>AttributeError</strong> – If this instance is not fitted yet.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="qklearn.cluster.ConstrainedClustering.add_cannot_link_to_qubo">
+<span class="sig-name descname"><span class="pre">add_cannot_link_to_qubo</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cannot_link_instances</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">int</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">weight_cannot_link</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#qklearn.cluster.ConstrainedClustering.add_cannot_link_to_qubo" title="Link to this definition"></a></dt>
+<dd><p>Add a constraint to enforce specified pairs of samples belonging to the different cluster.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>cannot_link_instances</strong> (<em>list</em><em> of </em><em>tuples</em><em> of </em><em>(</em><em>int</em><em>, </em><em>int</em><em>)</em>) – A list of pairs of sample indices that should belong to the different cluster. Each pair is represented as a tuple of two integers, e.g., <cite>cannot_link_instances</cite> could be <cite>[(0, 1), (4, 6), (5, 9), … , (20, 35)]</cite>.</p></li>
+<li><p><strong>weight_cannot_link</strong> (<em>float</em><em>, </em><em>default=None</em>) – A weight of constraint. If None, ‘lam’ will be used as weight.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>ValueError</strong> – If tuples in cannot_link_instances contains an incorrect number of indices.</p></li>
+<li><p><strong>ValueError</strong> – If a index in cannot_link_instances was less than 0.</p></li>
+<li><p><strong>ValueError</strong> – If a Index in cannot_link_instances was greater than n_samples.</p></li>
+<li><p><strong>ValueError</strong> – If this method was used in combination with set_*_by_qbits_reduction().</p></li>
+<li><p><strong>TypeError</strong> – If an invalid data type was specified for an argument.</p></li>
+<li><p><strong>AttributeError</strong> – If this instance is not fitted yet.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="qklearn.cluster.ConstrainedClustering.add_limited_sizes_to_qubo">
+<span class="sig-name descname"><span class="pre">add_limited_sizes_to_qubo</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">limited_sizes</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">weight_limited_sizes</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#qklearn.cluster.ConstrainedClustering.add_limited_sizes_to_qubo" title="Link to this definition"></a></dt>
+<dd><p>Add a constraint to enforce the number of assigned samples per cluster does not exceed the specified number.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>limited_sizes</strong> (<em>dict</em><em> of </em><em>{int : int}</em>) – Dictionary specifying the maximum number of samples per cluster.
+Key is index of cluster, and value is Upper limit of number of assigned samples.
+Please specify the limit for all clusters.</p></li>
+<li><p><strong>weight_limited_sizes</strong> (<em>float</em><em>, </em><em>default=None.</em>) – A weight of constraint. If None, ‘lam’ will be used as weight.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>ValueError</strong> – If an upper limit in limited_sizes was less than 0.</p></li>
+<li><p><strong>ValueError</strong> – If a cluster index in limited_sizes was less than 0.</p></li>
+<li><p><strong>ValueError</strong> – If a cluster index in limited_sizes was greater than n_clusters.</p></li>
+<li><p><strong>ValueError</strong> – If there is a cluster for which no upper limit is specified.</p></li>
+<li><p><strong>ValueError</strong> – If this method was used in combination with set_*_by_qbits_reduction().</p></li>
+<li><p><strong>ValueError</strong> – If this method was used in combination with add_balanced_sizes_to_qubo().</p></li>
+<li><p><strong>TypeError</strong> – If an invalid data type was specified for an argument.</p></li>
+<li><p><strong>AttributeError</strong> – If this instance is not fitted yet.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="qklearn.cluster.ConstrainedClustering.add_must_link_to_qubo">
+<span class="sig-name descname"><span class="pre">add_must_link_to_qubo</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">must_link_instances</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">int</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">weight_must_link</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#qklearn.cluster.ConstrainedClustering.add_must_link_to_qubo" title="Link to this definition"></a></dt>
+<dd><p>Add a constraint to enforce specified pairs of samples belonging to the same cluster.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>must_link_instances</strong> (<em>list</em><em> of </em><em>tuples</em><em> of </em><em>(</em><em>int</em><em>, </em><em>int</em><em>)</em>) – A list of pairs of sample indices that should belong to the same cluster. Each pair is represented as a tuple of two integers, e.g., <cite>must_link_instances</cite> could be <cite>[(0, 1), (4, 6), (5, 9), … , (20, 35)]</cite>.</p></li>
+<li><p><strong>weight_must_link</strong> (<em>float</em><em>, </em><em>default=None</em>) – A weight of constraint. If None, ‘lam’ will be used as weight.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>ValueError</strong> – If tuples in must_link_instances contains an incorrect number of indices.</p></li>
+<li><p><strong>ValueError</strong> – If index in must_link_instances was less than 0.</p></li>
+<li><p><strong>ValueError</strong> – If index in must_link_instances was greater than number of samples.</p></li>
+<li><p><strong>ValueError</strong> – If this method was used in combination with set_*_by_qbits_reduction().</p></li>
+<li><p><strong>TypeError</strong> – If an invalid data type was specified for an argument.</p></li>
+<li><p><strong>AttributeError</strong> – If this instance is not fitted yet.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="qklearn.cluster.ConstrainedClustering.add_non_partition_level_to_qubo">
+<span class="sig-name descname"><span class="pre">add_non_partition_level_to_qubo</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">non_partition_level_instances</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="p"><span class="pre">...</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">weight_non_partition_level</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#qklearn.cluster.ConstrainedClustering.add_non_partition_level_to_qubo" title="Link to this definition"></a></dt>
+<dd><p>Add a constraint not to assign specified samples to specified clusters.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>non_partition_level_instances</strong> (<em>dict</em><em> of </em><em>{int : tuple</em><em> of </em><em>(</em><em>int</em><em>, </em><em>...</em><em>)</em><em>}</em>) – Dictionary of samples not to assign to each cluster.
+Key is index of cluster, and value is list containing indices of samples which does not belong to those clusters.</p></li>
+<li><p><strong>weight_non_partition_level</strong> (<em>float</em><em>, </em><em>default=None</em>) – A weight of constraint. If None, ‘lam’ will be used as weight.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>ValueError</strong> – If an index in non_partition_level_instances was les than 0.</p></li>
+<li><p><strong>ValueError</strong> – If a cluster index in non_partition_level_instances was greater than n_clusters.</p></li>
+<li><p><strong>ValueError</strong> – If a sample index in non_partition_level_instances was greater than n_samples.</p></li>
+<li><p><strong>ValueError</strong> – If this method was used in combination with set_*_by_qbits_reduction().</p></li>
+<li><p><strong>TypeError</strong> – If an invalid data type was specified for an argument.</p></li>
+<li><p><strong>AttributeError</strong> – If this instance is not fitted yet.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="qklearn.cluster.ConstrainedClustering.add_partition_level_to_qubo">
+<span class="sig-name descname"><span class="pre">add_partition_level_to_qubo</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">partition_level_instances</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="p"><span class="pre">...</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">weight_partition_level</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#qklearn.cluster.ConstrainedClustering.add_partition_level_to_qubo" title="Link to this definition"></a></dt>
+<dd><p>Add a constraint to assign specified samples to specified clusters.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>partition_level_instances</strong> (<em>dict</em><em> of </em><em>{int : tuple</em><em> of </em><em>(</em><em>int</em><em>, </em><em>...</em><em>)</em><em>}</em>) – Dictionary of samples to assign to each cluster.
+Key is index of cluster, and value is list containing indices of samples belonging to those clusters.</p></li>
+<li><p><strong>weight_partition_level</strong> (<em>float</em><em>, </em><em>default=None</em>) – A weight of constraint. If None, ‘lam’ will be used as weight.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>ValueError</strong> – If an index in partition_level_instances was les than 0.</p></li>
+<li><p><strong>ValueError</strong> – If a cluster index in partition_level_instances was greater than n_clusters.</p></li>
+<li><p><strong>ValueError</strong> – If a sample index in partition_level_instances was greater than n_samples.</p></li>
+<li><p><strong>ValueError</strong> – If this method was used in combination with set_*_by_qbits_reduction().</p></li>
+<li><p><strong>TypeError</strong> – If an invalid data type was specified for an argument.</p></li>
+<li><p><strong>AttributeError</strong> – If this instance is not fitted yet.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="qklearn.cluster.ConstrainedClustering.fit">
+<span class="sig-name descname"><span class="pre">fit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">X</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">float</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">ndarray</span><span class="p"><span class="pre">[</span></span><span class="pre">Any</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">dtype</span><span class="p"><span class="pre">[</span></span><span class="pre">int64</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">float64</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#qklearn.cluster.ConstrainedClustering.fit" title="Link to this definition"></a></dt>
+<dd><p>Generate QUBO for clustering from input data.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>X</strong> (<em>array-like</em><em> of </em><em>shape</em><em> (</em><em>n_samples</em><em>, </em><em>n_features</em><em>)</em>) – An array of samples.</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>ValueError</strong> – If variable ‘X’ had invalid shape.</p></li>
+<li><p><strong>TypeError</strong> – If an invalid data type was specified for an argument.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="qklearn.cluster.ConstrainedClustering.predict">
+<span class="sig-name descname"><span class="pre">predict</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">client</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">FixstarsClient</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#qklearn.cluster.ConstrainedClustering.predict" title="Link to this definition"></a></dt>
+<dd><p>Perform clustering.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>client</strong> (<em>AmplifyClient</em>) – A client object of Fixstars Amplify SDK.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>labels</strong> – Indices of the cluster each sample belongs to.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>list of int</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>RuntimeError</strong> – If exceptions were raised from the Fixstars Amplify SDK.</p></li>
+<li><p><strong>RuntimeError</strong> – If the solution returned by an optimization solver does not satisfy the constraints.</p></li>
+<li><p><strong>ValueError</strong> – If any contradictions are found in the set constraints.</p></li>
+<li><p><strong>AttributeError</strong> – If this instance is not fitted yet.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="qklearn.cluster.ConstrainedClustering.set_must_link_by_qbits_reduction">
+<span class="sig-name descname"><span class="pre">set_must_link_by_qbits_reduction</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">must_link_instances</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">int</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#qklearn.cluster.ConstrainedClustering.set_must_link_by_qbits_reduction" title="Link to this definition"></a></dt>
+<dd><p>Add a constraint to enforce specified pairs of samples belonging to the same cluster, and reduce the number of instances.
+This method cannot be used in combination with other add_*_to_qubo() or set_*_by_qbits_reduction() methods.
+In addition, it cannot be called consecutively. Doing so may cause unexpected errors.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>must_link_instances</strong> (<em>list</em><em> of </em><em>tuples</em><em> of </em><em>(</em><em>int</em><em>, </em><em>int</em><em>)</em>) – A list of pairs of sample indices that must belong to the same cluster.</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>ValueError</strong> – If tuples in must_link_instances contains an incorrect number of indices.</p></li>
+<li><p><strong>ValueError</strong> – If index in must_link_instances was less than 0.</p></li>
+<li><p><strong>ValueError</strong> – If index in must_link_instances was greater than number of samples.</p></li>
+<li><p><strong>ValueError</strong> – If this method was used in combination with add_*_to_qubo().</p></li>
+<li><p><strong>TypeError</strong> – If an invalid data type was specified for an argument.</p></li>
+<li><p><strong>AttributeError</strong> – If this instance is not fitted yet.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="qklearn.cluster.ConstrainedClustering.set_non_partition_level_by_qbits_reduction">
+<span class="sig-name descname"><span class="pre">set_non_partition_level_by_qbits_reduction</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">non_partition_level_instances</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="p"><span class="pre">...</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#qklearn.cluster.ConstrainedClustering.set_non_partition_level_by_qbits_reduction" title="Link to this definition"></a></dt>
+<dd><p>Add a constraint not to assign specified samples to specified clusters, and reduce the number of instances.
+This method cannot be used in combination with other add_*_to_qubo() or set_*_by_qbits_reduction() methods.
+In addition, it cannot be called consecutively. Doing so may cause unexpected errors.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>non_partition_level_instances</strong> (<em>dict</em><em> of </em><em>{int : tuple</em><em> of </em><em>(</em><em>int</em><em>, </em><em>...</em><em>)</em><em>}</em>) – Dictionary of samples not to assign to each cluster.
+Key is index of cluster, and value is list containing indices of samples which does not belong to those clusters.</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>ValueError</strong> – If an index in non_partition_level_instances was les than 0.</p></li>
+<li><p><strong>ValueError</strong> – If a cluster index in non_partition_level_instances was greater than n_clusters.</p></li>
+<li><p><strong>ValueError</strong> – If a sample index in non_partition_level_instances was greater than n_samples.</p></li>
+<li><p><strong>ValueError</strong> – If this method was used in combination with add_*_to_qubo().</p></li>
+<li><p><strong>TypeError</strong> – If an invalid data type was specified for an argument.</p></li>
+<li><p><strong>AttributeError</strong> – If this instance is not fitted yet.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="qklearn.cluster.ConstrainedClustering.set_partition_level_by_qbits_reduction">
+<span class="sig-name descname"><span class="pre">set_partition_level_by_qbits_reduction</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">partition_level_instances</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="p"><span class="pre">...</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#qklearn.cluster.ConstrainedClustering.set_partition_level_by_qbits_reduction" title="Link to this definition"></a></dt>
+<dd><p>Add a constraint to assign specified samples to specified clusters, and reduce the number of instances.
+This method cannot be used in combination with other add_*_to_qubo() or set_*_by_qbits_reduction() methods.
+In addition, it cannot be called consecutively. Doing so may cause unexpected errors.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>partition_level_instances</strong> (<em>dict</em><em> of </em><em>{int : tuple</em><em> of </em><em>(</em><em>int</em><em>, </em><em>...</em><em>)</em><em>}</em>) – Dictionary of samples to assign to each cluster.
+Key is index of cluster, and value is list containing indices of samples belonging to those clusters.</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>ValueError</strong> – If an index in partition_level_instances was les than 0.</p></li>
+<li><p><strong>ValueError</strong> – If a cluster index in partition_level_instances was greater than n_clusters.</p></li>
+<li><p><strong>ValueError</strong> – If a sample index in partition_level_instances was greater than n_samples.</p></li>
+<li><p><strong>ValueError</strong> – If this method was used in combination with add_*_to_qubo().</p></li>
+<li><p><strong>TypeError</strong> – If an invalid data type was specified for an argument.</p></li>
+<li><p><strong>AttributeError</strong> – If this instance is not fitted yet.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="qklearn.cluster.KernelClustering">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">qklearn.cluster.</span></span><span class="sig-name descname"><span class="pre">KernelClustering</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_clusters</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sigma</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0.2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lam</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#qklearn.cluster.KernelClustering" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#qklearn.cluster.CombinatorialClustering" title="qklearn.cluster.CombinatorialClustering"><code class="xref py py-class docutils literal notranslate"><span class="pre">CombinatorialClustering</span></code></a></p>
+<p>Classify samples into the specified number of clusters by using Gaussian kernel.
+Depending on the class distribution of input data, it may not be possible to classify into the specified number of clusters.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>n_clusters</strong> (<em>int</em>) – Number of clusters. Must be greater than or equal to 1.</p></li>
+<li><p><strong>sigma</strong> (<em>float</em><em>, </em><em>default=0.2</em>) – Hyperparameter of Gaussian kernel.</p></li>
+<li><p><strong>lam</strong> (<em>float</em><em>, </em><em>default=None</em>) – The Lagrange multiplier weight for the one-hot constraint used to uniquely identify each cluster.
+If None, ‘-2 * (Minimum value of the Gram matrix for a Gaussian kernel)’ is used as lam.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>ValueError</strong> – If variable ‘n_clusters’ was less than 1.</p></li>
+<li><p><strong>ValueError</strong> – If variable ‘sigma’ was equal to or less than 0.</p></li>
+<li><p><strong>TypeError</strong> – If an invalid data type was specified for an argument.</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="qklearn.cluster.KernelClustering.fit">
+<span class="sig-name descname"><span class="pre">fit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">X</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">float</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">ndarray</span><span class="p"><span class="pre">[</span></span><span class="pre">Any</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">dtype</span><span class="p"><span class="pre">[</span></span><span class="pre">int64</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">float64</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">if_dist</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#qklearn.cluster.KernelClustering.fit" title="Link to this definition"></a></dt>
+<dd><p>Generate QUBO for clustering from input data.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>X</strong> (<em>array-like</em><em> of </em><em>shape</em><em> (</em><em>n_samples</em><em>, </em><em>n_features</em><em>) or </em><em>array-like</em><em> of </em><em>shape</em><em>(</em><em>n_samples</em><em>, </em><em>n_samples</em><em>)</em>) – An array of samples, or a distance matrix between samples.</p></li>
+<li><p><strong>if_dist</strong> (<em>bool</em><em>, </em><em>default=False</em>) – A bool indicating whether X is a distance matrix or not.
+If True, ‘X’ is assumed to be a distance matrix; otherwise, ‘X’ is treated as an array of samples.
+Kernel Clustering only supports False.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>ValueError</strong> – If variable ‘X’ had invalid shape.</p></li>
+<li><p><strong>TypeError</strong> – If an invalid data type was specified for an argument.</p></li>
+<li><p><strong>TypeError</strong> – If variable ‘if_dist’ was True.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="qklearn.cluster.BiDViT">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">qklearn.cluster.</span></span><span class="sig-name descname"><span class="pre">BiDViT</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">kappa</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">32</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">epsilon</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">1.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">epsilon_rate</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">1.05</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rev_rate</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">1.5</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#qklearn.cluster.BiDViT" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">BaseSolver</span></code></p>
+<p>Perform hierarchical clustering on input data.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>kappa</strong> (<em>int</em><em>, </em><em>default=32</em>) – The maximum number of samples within a chunk utilized for efficient distance calculations.
+A larger kappa improves accuracy but increases computation time, whereas a smaller kappa reduces accuracy but enhances computation speed.</p></li>
+<li><p><strong>epsilon</strong> (<em>float</em><em>, </em><em>defalut=1.0</em>) – The threshold of the Euclidean distance considered for samples to be deemed within the same cluster.</p></li>
+<li><p><strong>epsilon_rate</strong> (<em>float</em><em>, </em><em>defalut=1.05</em>) – Epsilon multiplier</p></li>
+<li><p><strong>rev_rate</strong> (<em>float</em><em>, </em><em>default=1.5</em>) – A weight for the one-hot constraint used to uniquely identify each cluster.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>ValueError</strong> – If variable ‘kappa’ was less than 1.</p></li>
+<li><p><strong>ValueError</strong> – If variable ‘epsilon’ were less than or equal to 0.</p></li>
+<li><p><strong>ValueError</strong> – If variable ‘epsilon_rate’ were less than or equal to 1.</p></li>
+<li><p><strong>TypeError</strong> – If an invalid data type was specified for an argument.</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="qklearn.cluster.BiDViT.fit_predict">
+<span class="sig-name descname"><span class="pre">fit_predict</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">X</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">float</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">ndarray</span><span class="p"><span class="pre">[</span></span><span class="pre">Any</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">dtype</span><span class="p"><span class="pre">[</span></span><span class="pre">int64</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">float64</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">client</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">FixstarsClient</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">weight</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#qklearn.cluster.BiDViT.fit_predict" title="Link to this definition"></a></dt>
+<dd><p>Generate QUBO for clustering from input data and perform clustering.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>X</strong> (<em>array-like</em><em> of </em><em>shape</em><em> (</em><em>n_samples</em><em>, </em><em>n_features</em><em>)</em>) – An array of samples.</p></li>
+<li><p><strong>client</strong> (<em>AmplifyClient</em>) – A client object of Fixstars Amplify SDK.</p></li>
+<li><p><strong>weight</strong> (<em>list</em><em> of </em><em>float</em><em>, </em><em>default=None</em>) – Weights applied per chunk. its length must be equal to n_sample.
+If None, a list of ones ‘[1] * len(X)’ is used as weight.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>tree</strong> – Clustering results. A dictionary where keys are the number of clusters and values are list of labels of the clusters to which each sample belongs.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>dict of {int : list of int}</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>ValueError</strong> – If variable ‘X’ had invalid shape.</p></li>
+<li><p><strong>ValueError</strong> – If length of weight is not equal to n_sample.</p></li>
+<li><p><strong>TypeError</strong> – If an invalid data type was specified for an argument.</p></li>
+<li><p><strong>RuntimeError</strong> – If exceptions were raised from the Fixstars Amplify SDK.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="qklearn-linear-model-module">
+<span id="qklearn-linear"></span><h2>qklearn.linear_model module<a class="headerlink" href="#qklearn-linear-model-module" title="Link to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="qklearn.linear_model.LinearRegression">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">qklearn.linear_model.</span></span><span class="sig-name descname"><span class="pre">LinearRegression</span></span><a class="headerlink" href="#qklearn.linear_model.LinearRegression" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">BaseSolver</span></code></p>
+<p>Perform linear regression analysis.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="qklearn.linear_model.LinearRegression.fit">
+<span class="sig-name descname"><span class="pre">fit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">X</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">float</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">ndarray</span><span class="p"><span class="pre">[</span></span><span class="pre">Any</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">dtype</span><span class="p"><span class="pre">[</span></span><span class="pre">int64</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">float64</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">float</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">ndarray</span><span class="p"><span class="pre">[</span></span><span class="pre">Any</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">dtype</span><span class="p"><span class="pre">[</span></span><span class="pre">int64</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">float64</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">client</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">FixstarsClient</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_elements</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">3</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">basis</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">exponent_offset</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#qklearn.linear_model.LinearRegression.fit" title="Link to this definition"></a></dt>
+<dd><p>Fit linear model.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>X</strong> (<em>Array like</em><em> of </em><em>shape</em><em> (</em><em>n_sample</em><em>, </em><em>n_feature</em><em>)</em>) – Training data.</p></li>
+<li><p><strong>y</strong> (<em>Array like</em><em> of </em><em>shape</em><em> (</em><em>n_sample</em><em>, </em><em>)</em>) – Target values.</p></li>
+<li><p><strong>client</strong> (<em>AmplifyClient</em>) – A client object of Fixstars Amplify SDK.</p></li>
+<li><p><strong>num_elements</strong> (<em>int</em><em>, </em><em>default=3</em>) – <p>Upper limit of exponent of basis.
+The regression coefficient <span class="math notranslate nohighlight">\(w_i\)</span> is approximated by the sum of the powers of the basis <span class="math notranslate nohighlight">\(b\)</span> as follows:</p>
+<p><span class="math notranslate nohighlight">\(w_i = \Sigma_{n=0}^{num\_elements - 1}(b^{(n + exponent\_offset)}\hat{w_{in}}) - \Sigma_{n=0}^{num\_elements - 1}(b^{(num\_elements - 1 - n + exponent\_offset)}\hat{w_{in}^{\prime}})\)</span></p>
+<p>where <span class="math notranslate nohighlight">\(\hat{w_{in}}\)</span> and <span class="math notranslate nohighlight">\(\hat{w_{in}^{\prime}}\)</span> are binary variables.</p>
+</p></li>
+<li><p><strong>basis</strong> (<em>int</em><em>, </em><em>default=2</em>) – A basis for approximating the regression coefficients with binary variables.</p></li>
+<li><p><strong>exponent_offset</strong> (<em>int</em><em>, </em><em>default=0</em>) – Parameters that adjusts exponent of basis.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>ValueError</strong> – If variable ‘X’ or ‘y’ had Invalid shape.</p></li>
+<li><p><strong>ValueError</strong> – If variable ‘num_elements’ was less than 1.</p></li>
+<li><p><strong>TypeError</strong> – If an invalid data type was specified for an argument.</p></li>
+<li><p><strong>IndexError</strong> – If the lengths of ‘X’ and ‘y’ do not match.</p></li>
+<li><p><strong>RuntimeError</strong> – If exceptions were raised from the Fixstars Amplify SDK.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="qklearn.linear_model.LinearRegression.predict">
+<span class="sig-name descname"><span class="pre">predict</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">X</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">float</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">ndarray</span><span class="p"><span class="pre">[</span></span><span class="pre">Any</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">dtype</span><span class="p"><span class="pre">[</span></span><span class="pre">int64</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">float64</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">ndarray</span><span class="p"><span class="pre">[</span></span><span class="pre">Any</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">dtype</span><span class="p"><span class="pre">[</span></span><span class="pre">float64</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#qklearn.linear_model.LinearRegression.predict" title="Link to this definition"></a></dt>
+<dd><p>Predict using the linear model.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>X</strong> (<em>Array like</em><em> of </em><em>shape</em><em> (</em><em>n_sample</em><em>, </em><em>n_feature</em><em>)</em>) – Samples.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>y</strong> – Predicted values.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>ndarray of shape (n_sample, )</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>ValueError</strong> – If variable ‘X’ has invalid shape.</p></li>
+<li><p><strong>TypeError</strong> – If an invalid data type was specified for an argument.</p></li>
+<li><p><strong>AttributeError</strong> – If this instance is not fitted yet.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="qklearn-svm-module">
+<span id="qklearn-svm"></span><h2>qklearn.svm module<a class="headerlink" href="#qklearn-svm-module" title="Link to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="qklearn.svm.SVC">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">qklearn.svm.</span></span><span class="sig-name descname"><span class="pre">SVC</span></span><a class="headerlink" href="#qklearn.svm.SVC" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">BaseSolver</span></code></p>
+<p>Support Vector Classification.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="qklearn.svm.SVC.fit">
+<span class="sig-name descname"><span class="pre">fit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">X</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">float</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">ndarray</span><span class="p"><span class="pre">[</span></span><span class="pre">Any</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">dtype</span><span class="p"><span class="pre">[</span></span><span class="pre">int64</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">float64</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">t</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">float</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">ndarray</span><span class="p"><span class="pre">[</span></span><span class="pre">Any</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">dtype</span><span class="p"><span class="pre">[</span></span><span class="pre">int64</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">float64</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">client</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">FixstarsClient</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_elements</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">3</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">basis</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">exponent_offset</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">xi</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#qklearn.svm.SVC.fit" title="Link to this definition"></a></dt>
+<dd><p>Fit the given training data to two classes using the quantum SVM model.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>X</strong> (<em>array-like</em><em> of </em><em>shape</em><em> (</em><em>n_samples</em><em>, </em><em>n_features</em><em>)</em>) – Matrix containing the training data, where n_samples is
+the number of samples and n_features is the number of features.</p></li>
+<li><p><strong>t</strong> (<em>array-like</em><em> of </em><em>shape</em><em> (</em><em>n_samples</em><em>,</em><em>)</em>) – Vector containing the label representing the class to which each sample belongs.
+This parameter represents the two classes by label 1 or -1.</p></li>
+<li><p><strong>client</strong> (<em>AmplifyClient object</em>) – Solver client for Fixstars Amplify.</p></li>
+<li><p><strong>num_elements</strong> (<em>int</em><em>, </em><em>default=3</em>) – The number of ‘basis’ used to approximate the resulting coefficients alpha of SVM training as binary variables,
+where alpha means the coefficients obtained by SVM training.
+This parameter affects the size of the QUBO matrix and the accuracy of the binary variable approximation.</p></li>
+<li><p><strong>basis</strong> (<em>int</em><em>, </em><em>default=2</em>) – A basis for approximating the resulting coefficients alpha of SVM training as binary variables.</p></li>
+<li><p><strong>exponent_offset</strong> (<em>int</em><em>, </em><em>default=0</em>) – Parameter to adjust the exponential portion of ‘basis’. Increasing ‘exponent_offset’ results in a smaller C,
+the maximum value of alpha, whereas decreasing this value results in a larger C.
+The appropriate value of this parameter should be determined based on the selected ‘basis’, ‘num_elements’, and obtained alpha.</p></li>
+<li><p><strong>xi</strong> (<em>{int</em><em>, </em><em>float}</em><em>, </em><em>default=1</em>) – Parameter corresponding to the constraint coefficients of the quadratic programming problem.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>ValueError</strong> – If the vector ‘t’ contains a label other than 1 or -1, or if the vector ‘t’ consists only of 1 or only of -1.</p></li>
+<li><p><strong>ValueError</strong> – If a parameter such as ‘num_elements’, ‘basis’ and ‘xi’ is out of the valid range.
+    (e.g., ‘num_elements’ is less than 1, ‘basis’ is less than 2, and ‘xi’ is less than 0.)</p></li>
+<li><p><strong>TypeError</strong> – If an argument such as ‘X’, ‘num_elements’, ‘basis’, ‘exponent_offset’ and ‘xi’ has invalid data type.</p></li>
+<li><p><strong>IndexError</strong> – If the lengths of ‘X’ and ‘t’ do not match.</p></li>
+<li><p><strong>RuntimeError</strong> – If Fixstars Amplify throw an exception.</p></li>
+<li><p><strong>RuntimeError</strong> – If the slope of the decision boundary obtained by the optimization solver is an invalid value.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="qklearn.svm.SVC.predict">
+<span class="sig-name descname"><span class="pre">predict</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">X</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">float</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">ndarray</span><span class="p"><span class="pre">[</span></span><span class="pre">Any</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">dtype</span><span class="p"><span class="pre">[</span></span><span class="pre">int64</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">float64</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">ndarray</span><span class="p"><span class="pre">[</span></span><span class="pre">Any</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">dtype</span><span class="p"><span class="pre">[</span></span><span class="pre">float64</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#qklearn.svm.SVC.predict" title="Link to this definition"></a></dt>
+<dd><p>Predict class labels for the given test data.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>X</strong> (<em>array like</em><em> of </em><em>shape</em><em> (</em><em>n_sample</em><em>, </em><em>n_features</em><em>)</em>) – Matrix containing the test data for which we want to predict class labels,
+where n_samples is the number of samples and n_features is the number of features.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>test_label</strong> – Vector containing the index representing the class to which each sample belongs</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>ndarray of shape (n_sample,)</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>ValueError</strong> – If n_features of ‘X’ and that of the training data do not match.</p></li>
+<li><p><strong>TypeError</strong> – If ‘X’ has an invalid type.</p></li>
+<li><p><strong>AttributeError</strong> – If this instance is not fitted yet.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="qklearn-utils-read-token-module">
+<span id="qklearn-utils-read-token"></span><h2>qklearn.utils.read_token module<a class="headerlink" href="#qklearn-utils-read-token-module" title="Link to this heading"></a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="qklearn.utils.read_token.read_token">
+<span class="sig-prename descclassname"><span class="pre">qklearn.utils.read_token.</span></span><span class="sig-name descname"><span class="pre">read_token</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">service</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="headerlink" href="#qklearn.utils.read_token.read_token" title="Link to this definition"></a></dt>
+<dd><p>Read token from amplify-license.yaml</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>service</strong> (<em>str</em>) – A service name for an optimization solver to solve QUBO problems.
+A token is searched with this string as the key in amplify-license.yaml.</p></li>
+<li><p><strong>path</strong> (<em>str</em><em>, </em><em>default=None</em>) – File path to amplify-license.yaml. If None, amplify-license.yaml in current directory is used.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>token</strong> – A token corresponding to “service”.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>ValueError</strong> – If an amplify-license.yaml had invalid structure.</p></li>
+<li><p><strong>ValueError</strong> – If token of service was not found in amplify-license.yaml.</p></li>
+<li><p><strong>FileNotFoundError</strong> – If amplify-license.yaml was not found.</p></li>
+<li><p><strong>TypeError</strong> – If an invalid data type was specified for an argument.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="qklearn-utils-cost-module">
+<span id="qklearn-utils-cost"></span><h2>qklearn.utils.cost module<a class="headerlink" href="#qklearn-utils-cost-module" title="Link to this heading"></a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="qklearn.utils.cost.cost">
+<span class="sig-prename descclassname"><span class="pre">qklearn.utils.cost.</span></span><span class="sig-name descname"><span class="pre">cost</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">float</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">ndarray</span><span class="p"><span class="pre">[</span></span><span class="pre">Any</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">dtype</span><span class="p"><span class="pre">[</span></span><span class="pre">int64</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">float64</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">label</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">float</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">ndarray</span><span class="p"><span class="pre">[</span></span><span class="pre">Any</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">dtype</span><span class="p"><span class="pre">[</span></span><span class="pre">int64</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">float64</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scaling</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'normal'</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">float</span></span></span><a class="headerlink" href="#qklearn.utils.cost.cost" title="Link to this definition"></a></dt>
+<dd><p>Calculate the cost using the data and labels.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>data</strong> (<em>array-like</em><em> of </em><em>shape</em><em> (</em><em>n_samples</em><em>, </em><em>n_features</em><em>)</em>) – An array of samples.</p></li>
+<li><p><strong>label</strong> (<em>array-like</em><em> of </em><em>shape</em><em> (</em><em>n_samples</em><em>, </em><em>)</em>) – Indices of the cluster each sample belongs to.</p></li>
+<li><p><strong>scaling</strong> (<em>str</em><em>, </em><em>default=&quot;normal&quot;</em>) – A scaling method. The distance matrix is normalized using min-max
+scaling only when this parameter is set to “normal”.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>cost</strong> – Sum of the distance between pairs of samples with the same label.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="modules.html" class="btn btn-neutral float-left" title="Package Reference" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="gettingStarted.html" class="btn btn-neutral float-right" title="Getting Started" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2025, Tohoku University.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
