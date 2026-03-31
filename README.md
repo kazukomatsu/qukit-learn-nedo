@@ -18,3 +18,6 @@ $ pip install .
 $ cd qukit-learn
 $ python setup.py test (optionally)
 ```
+
+## 謝辞
+本成果は、国立研究開発法人新エネルギー・産業技術総合開発機構 (NEDO) の委託事業として得られたものです。
